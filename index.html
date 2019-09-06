@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Vet Clinic</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="homepage.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Pet Clinic</h1>
+        <p>A website created by group-d!</p>
+    </div>
+    <div class="navbar">
+        <a onclick="getOwners()">View All Owners</a>
+        <a data-toggle="modal" data-target=".bd-create-modal-lg">Add Owner</button>
+        <a href="#">View All Pets By An Owner</a>
+        <a href="#">Pet Visits</a>
+        <a href="#">Add New Pet For An Owner</a>
+        <a href="#">Remove A Pet Visit</a>
+        <a href="#">View Owner Details</button>
+        <a href="#">Update Vet Details</a>
+
+    </div class="row">
+    <div class="side"></div>
+    <div class="main">
+        <div class="alert alert-danger" role="alert" id="Error"></div>
+        <div id="root"></div>
+        
+        <!-- MODAL FOR CREATING USER!-->
+        <div class="modal fade bd-create-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="createModalLabel">New Post</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form onsubmit="addOwner()">
+                            <div class="form-group">
+                                <label for="name" class="col-form-label">Name:</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName" class="col-form-label">Last Name:</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address" class="col-form-label">Address:</label>
+                                <textarea class="form-control" id="address" address></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="City" class="col-form-label">City:</label>
+                                <input type="text" class="form-control" id="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="number" class="col-form-label">074 me:</label>
+                                <input type="tel" class="form-control" id="number" required>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        <!-- Button to add owner -->
+                        <button type="submit" class="btn btn-success">Add Owner</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- END OF MODAL-->
+    </div>
+    <div>
+        
+</body>
+
+<footer>
+    <script src="script.js"></script>
+</footer>
+
+</html>
