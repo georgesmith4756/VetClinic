@@ -4,6 +4,7 @@ let getElements = (request) => {
     for(let element of formEl.elements) {
         if(element.id) {
             formData[element.id] = element.value;
+            formData[element.pets] = element.pets;
         }
     }
 }
