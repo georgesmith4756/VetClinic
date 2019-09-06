@@ -129,6 +129,7 @@ container.setAttribute('class', 'container');
 app.appendChild(container)
 const input = document.createElement("input");
 const button2 = document.createElement("button");
+button2.setAttribute('id', 'singleButton');
 button2.innerHTML = "Submit";
 button2.addEventListener("onclick", getSingleUser(input.value));
 container.appendChild(input);
@@ -209,6 +210,32 @@ function getSingleUser(value){
     
   request.send();
   
+}
+
+const formDataObj = {};
+function handleSubmit(form) {
+   for (let element of form.elements) {
+       formDataObj[element.id] = element.value;
+   }
+   console.log(formDataObj);
+   visitsForPet();
+   return false;
+}
+function visitsForPet() {
+   let method = "GET";
+   let url = 'http://localhost:9966/petclinic/api/visits';
+   let callback = print;
+   let headers = {"Content-Type": "application/json"};
+   httpRequest(method, url, callback, headers);
+}
+function print(data) {
+   data = JSON.parse(data.response);
+   for (let i = 0; i < data.length; i++) {
+       if (data[i].pet.name == formDataObj['petName']) {
+           console.log(data[i].description);
+           alert(data[i].description);
+       }
+   }
 }
   
 
