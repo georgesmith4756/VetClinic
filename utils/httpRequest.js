@@ -1,4 +1,4 @@
-function httpRequest(method, url, callback, headers, body) {
+export default function httpRequest(method, url, callback, headers, body) {
     let request = new XMLHttpRequest();
     request.open(method, url);
     request.onload(() => {
