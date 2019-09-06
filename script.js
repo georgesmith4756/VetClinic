@@ -79,7 +79,7 @@ app.appendChild(container)
 const input = document.createElement("input");
 const button2 = document.createElement("button");
 button2.innerHTML = "Submit";
-button2.addEventListener("click", getSingleUser(input.value));
+button2.addEventListener("onclick", getSingleUser(input.value));
 
 container.appendChild(input);
 container.appendChild(button2);
@@ -88,7 +88,7 @@ container.appendChild(button2);
 
 function getSingleUser(value){
 
-    alert("Hello");
+    alert(value);
 
     var request = new XMLHttpRequest()
     request.open('GET', 'http://localhost:9966/petclinic/api/owners', true)
